@@ -3,7 +3,7 @@
     <div class="header-brand">
         <!--begin::Logo-->
         <a href="#">
-            <img alt="Logo" src="assets/images/logo.png" class="h-50px h-lg-50px" />
+            <img alt="Logo" src="{{ asset('assets') }}/images/logo.png" class="h-50px h-lg-50px" />
         </a>
         <!--end::Logo-->
         <!--begin::Aside minimize-->
@@ -64,7 +64,9 @@
 
     <div class="toolbar d-flex justify-content-end me-6">
         <div class="nav-item dropdown">
-            <a href="#" class="list-unstyled btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="#"
+                class="list-unstyled btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary dropdown-toggle"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg-->
                 <span class="svg-icon svg-icon-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -80,10 +82,12 @@
                 <!--end::Svg Icon-->
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Setting</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Setting</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Log Out</a></li>
             </ul>
         </div>
         <!--end::Toolbar-->

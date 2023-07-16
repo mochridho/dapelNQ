@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('sanctions', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_sanksi');
+            $table->string('keterangan_sanksi');
+            $table->string('slug')->unique();
             $table->string('kategori_sanksi');
             $table->timestamps();
         });

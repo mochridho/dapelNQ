@@ -8,7 +8,7 @@
         <div class="aside-user d-flex align-items-sm-center justify-content-center py-5">
             <!--begin::Symbol-->
             <div class="symbol symbol-50px">
-                <img src="assets/media/avatars/150-26.jpg" alt="" />
+                <img src="{{ asset('assets') }}/media/avatars/150-26.jpg" alt="" />
             </div>
             <!--end::Symbol-->
             <!--begin::Wrapper-->
@@ -94,8 +94,11 @@
                         <span class="menu-title">Data Pelanggar</span>
                     </a>
                 </div>
+                {{-- {{ Request::url() == url('/pelanggaran') || Request::url() == url('/user') || Request::url() == url('/santri') || Request::url() == url('') ? 'show' : '' }} --}}
                 <div data-kt-menu-trigger="click"
-                    class="menu-item menu-accordion {{ Request::url() == url('/pelanggaran') || Request::url() == url('/user') || Request::url() == url('/santri') || Request::url() == url('/sanctions') ? 'show' : '' }}">
+                    class="menu-item menu-accordion
+                    {{ strpos(Route::currentRouteName(), 'master.sanctions') == 0 ? 'show' : '' }}
+                    ">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
@@ -134,7 +137,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link {{ Route::is('sanctions.index') ? 'active' : '' }}"
+                            <a class="menu-link {{ Route::is('sanctions.*') ? 'active' : '' }}"
                                 href="{{ route('sanctions.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>

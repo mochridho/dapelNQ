@@ -14,19 +14,23 @@ class SanctionSeeder extends Seeder
     {
         $sanctions = [
             [
-                'nama_sanksi' => 'berdiri di halaman pesantren',
+                'keterangan_sanksi' => 'berdiri di halaman pesantren',
+                'slug' => 'berdiri-di-halaman-pesantren-dawda',
                 'kategori_sanksi' => 'ringan',
             ],
             [
-                'nama_sanksi' => 'merangkak di halaman pesantren',
+                'keterangan_sanksi' => 'merangkak di halaman pesantren',
+                'slug' => 'merangkak-di-halaman-pesantren-aweww',
                 'kategori_sanksi' => 'ringan',
             ],
             [
-                'nama_sanksi' => 'kartu kuning dan berdiri di halaman pesantren',
+                'keterangan_sanksi' => 'kartu kuning dan berdiri di halaman pesantren',
+                'slug' => 'kartu-kuning-dan-berdiri-di-halaman-pesantren-atyww',
                 'kategori_sanksi' => 'berat',
             ],
             [
-                'nama_sanksi' => 'di asingkan dari pesantren',
+                'keterangan_sanksi' => 'di asingkan dari pesantren',
+                'slug' => 'di-asingkan-dari-pesantren-awwpo',
                 'kategori_sanksi' => 'berat',
             ],
         ];

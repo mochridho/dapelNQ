@@ -6,11 +6,15 @@ use App\Http\Controllers\PelanggarController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SanctionController;
-use App\Http\Controllers\SanksiController;
 use App\Http\Controllers\SantriController;
 
 // dashboard
 Route::get('/', [DashboardController::class, 'index']);
+
+// sanksi => sanctions
+Route::prefix('master')->group(function () {
+    Route::resource('sanctions', SanctionController::class);
+});
 
 // data pelanggar
 Route::get('/data-pelanggar', [PelanggarController::class, 'index']);
@@ -26,11 +30,6 @@ Route::get('/edit-data-user', [UserController::class, 'editDataUser'])->name('ed
 Route::get('/pelanggaran', [PelanggaranController::class, 'index']);
 Route::get('/tambah-data-pelanggran', [PelanggaranController::class, 'tambahDataPelanggaran'])->name('tambah-data-pelanggaran');
 Route::get('/edit-data-pelanggran', [PelanggaranController::class, 'editDataPelanggaran'])->name('edit-data-pelanggaran');
-
-// sanksi
-Route::resource('sanctions', SanctionController::class);
-// Route::get('/tambah-data-sanksi', [SanksiController::class, 'tambahDataSanksi'])->name('tambah-data-sanksi');
-// Route::get('/edit-data-sanksi', [SanksiController::class, 'editDataSanksi'])->name('edit-data-sanksi');
 
 // santri
 Route::get('/santri', [SantriController::class, 'index']);
