@@ -18,7 +18,7 @@
                         <!--begin::Select-->
                         <div class="me-6 my-1">
                             <a href="{{ route('tambah-data-sanksi') }}">
-                                <button class="btn btn-success btn-sm">Tambah Data</button>
+                                <button class="btn btn-success btn-sm">Tambah Data Sanksi</button>
                             </a>
                         </div>
                         <!--end::Select-->
@@ -49,8 +49,8 @@
                             <thead class="fs-7 text-gray-400 text-uppercase">
                                 <tr>
                                     <th class="min-w-50px">No</th>
-                                    <th class="min-w-60px">Kategori Sanksi</th>
-                                    <th class="min-w-250px">Nama Sanksi</th>
+                                    <th class="min-w-60px">Skala Sanksi</th>
+                                    <th class="min-w-250px">Keterangan Sanksi</th>
                                     <th class="min-w-30px">Aksi</th>
                                 </tr>
                             </thead>
@@ -60,7 +60,7 @@
 
 													<tr>
 														<td>1</td>
-														<td>Ringan</td>
+														<td>Moral</td>
 														<td>Berdiri Di Halaman Pesantren</td>
 														<td class="text-start">
 															<a href="{{ route('edit-data-sanksi') }}" class="btn btn-success btn-sm">Edit</a>
@@ -69,8 +69,8 @@
 													</tr>
 													<tr>
 														<td>2</td>
-														<td>Berat</td>
-														<td>Di Asingkan Dari Pesantren</td>
+														<td>Kodeetik</td>
+														<td>Pemberian Surat Kepada Orang Tua</td>
 														<td class="text-start">
 															<a href="{{ route('edit-data-sanksi') }}" class="btn btn-success btn-sm">Edit</a>
 															<a href="#" class="btn btn-danger btn-sm">Hapus</a>
@@ -78,8 +78,8 @@
 													</tr>
 													<tr>
 														<td>3</td>
-														<td>Ringan</td>
-														<td>Merangkak Di Halaman Pesantren</td>
+														<td>Administrasi</td>
+														<td>Membayar Denda</td>
 														<td class="text-start">
 															<a href="{{ route('edit-data-sanksi') }}" class="btn btn-success btn-sm">Edit</a>
 															<a href="#" class="btn btn-danger btn-sm">Hapus</a>
@@ -87,7 +87,7 @@
 													</tr>
 													<tr>
 														<td>4</td>
-														<td>Ringan</td>
+														<td>Moral</td>
 														<td>Berdiri Di Halaman Pesantren</td>
 														<td class="text-start">
 															<a href="{{ route('edit-data-sanksi') }}" class="btn btn-success btn-sm">Edit</a>
@@ -96,7 +96,7 @@
 													</tr>
 													<tr>
 														<td>5</td>
-														<td>Berat</td>
+														<td>Moral</td>
 														<td>Kartu Kuning Dan Berdiri Di Halaman Pesantren</td>
 														<td class="text-start">
 															<a href="{{ route('edit-data-sanksi') }}" class="btn btn-success btn-sm">Edit</a>

@@ -51,7 +51,7 @@
                                     <th class="min-w-30px">No</th>
                                     <th class="min-w-50px">NIS</th>
                                     <th class="min-w-150px">Nama Santri</th>
-                                    <th class="min-w-200px">Pelanggaran</th>
+                                    <th class="min-w-200px">Keterangan Pelanggaran</th>
                                     <th class="min-w-230px">Sanksi</th>
                                     <th class="min-w-130px">Status</th>
                                     <th class="min-w-270px">Aksi</th>
@@ -60,7 +60,6 @@
                             <!--end::Head-->
                             		<!--begin::Body-->
 												<tbody class="fs-6">
-                                                    @for ($i = 0;$i < 3;$i++)
 													<tr>
 														<td>1</td>
 														<td>2020</td>
@@ -76,14 +75,57 @@
                                                             </div>
 														</td>
 													</tr>
-                                                    @endfor
-                                                    @for ($i = 0;$i < 2;$i++)
 													<tr>
-														<td>1</td>
-														<td>2020</td>
-														<td>Abdul</td>
-														<td>Ghoshob</td>
+														<td>2</td>
+														<td>2021</td>
+														<td>Saleh</td>
+														<td>Mengkonsumsi Bahan Terlarang</td>
+														<td>Pemberian Surat Kepada Orang Tua</td>
+                                                        <td><span
+                                                            class="badge bg-success-subtle text-success border border-danger">Selesai</span></td>
+														<td>
+                                                            <div class="text-start d-inline-flex gap-1">
+                                                                <a href="{{ route('edit-data-pelanggar') }}" class="btn btn-success btn-sm">Edit</a>
+                                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                            </div>
+														</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>2023</td>
+														<td>Sholek</td>
+														<td>Telat Balek</td>
+														<td>Merangkak Di Halaman Pesantren</td>
+                                                        <td><span
+                                                            class="badge bg-success-subtle text-success border border-success">Proses</span></td>
+														<td>
+                                                            <div class="text-start d-inline-flex gap-1">
+                                                                <a href="{{ route('edit-data-pelanggar') }}" class="btn btn-success btn-sm">Edit</a>
+                                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                            </div>
+														</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>2024</td>
+														<td>Amin</td>
+														<td>Tidak Mengikuti Kegiatan Ubudiah</td>
 														<td>Berdiri Di Halaman Pesantren</td>
+                                                        <td><span
+                                                            class="badge bg-success-subtle text-success border border-success">Proses</span></td>
+														<td>
+                                                            <div class="text-start d-inline-flex gap-1">
+                                                                <a href="{{ route('edit-data-pelanggar') }}" class="btn btn-success btn-sm">Edit</a>
+                                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                            </div>
+														</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>2025</td>
+														<td>Amin</td>
+														<td>Berkelahi</td>
+														<td>Kartu Kuning Dan Berdiri Di Halaman Pesantren</td>
                                                         <td><span
                                                             class="badge bg-danger-subtle text-danger border border-danger">Selesai</span></td>
 														<td>
@@ -93,7 +135,6 @@
                                                             </div>
 														</td>
 													</tr>
-                                                    @endfor
 												</tbody>
 												<!--end::Body-->
                         </table>

@@ -18,7 +18,7 @@
                         <!--begin::Select-->
                         <div class="me-6 my-1">
                             <a href="{{route('tambah-data-user')}}">
-                                <button class="btn btn-success btn-sm">Tambah Data</button>
+                                <button class="btn btn-success btn-sm">Tambah Data User</button>
                             </a>
                         </div>
                         <!--end::Select-->
@@ -49,7 +49,7 @@
                             <thead class="fs-7 text-gray-400 text-uppercase">
                                 <tr>
                                     <th class="min-w-50px">No</th>
-                                    <th class="min-w-60px">Nama User</th>
+                                    <th class="min-w-60px">Rule</th>
                                     <th class="min-w-250px">Username</th>
                                     <th class="min-w-30px">Aksi</th>
                                 </tr>

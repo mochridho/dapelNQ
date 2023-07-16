@@ -13,7 +13,7 @@
                             </label>
                             <!--end::Label-->
                             <div class="d-flex gap-2">
-                                <input type="text" class="form-control form-control-solid" placeholder="Search"
+                                <input type="text" class="form-control form-control-solid" placeholder="Cari Data Santri"
                                     name="card_name" />
                                 <button class="btn btn-success">Cari</button>
                             </div>
@@ -57,19 +57,25 @@
                     </div>
                     <div class="col-6">
                         <div class="d-flex flex-column mb-7 fv-row">
-                            <label class="required fs-6 fw-bold mb-2">Jenis Pelanggaran</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select Pelanggaran" name="target_assign">
+                            <label class="required fs-6 fw-bold mb-2">Keterangan Pelanggaran</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Pelanggaran" name="target_assign">
                                 <option value="">Select pelanggaran...</option>
-                                <option value="1">Colli</option>
-                                <option value="2">Colmex</option>
+                                <option value="1">Ghoshop</option>
+                                <option value="2">Mengkonsumsi Bahan Terlarang</option>
+                                <option value="3">Telat Balek Pesantren</option>
+                                <option value="4">Tidak Mengikuti Kegiatan Ubudiyah</option>
+                                <option value="5">Berkelahi</option>
                             </select>
                         </div>
                         <div class="d-flex flex-column mb-7 fv-row">
-                            <label class="required fs-6 fw-bold mb-2">Jenis Sanksi</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select Sanksi" name="target_assign">
+                            <label class="required fs-6 fw-bold mb-2">Keterangan Sanksi</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Sanksi" name="target_assign">
                                 <option value="">Select sanksi...</option>
-                                <option value="1">Colli</option>
-                                <option value="2">Colmex</option>
+                                <option value="1">Brdiri Di Halaman Pesantren</option>
+                                <option value="2">Pemberian Surat Kepada Orang Tua</option>
+                                <option value="3">Membayar Denda</option>
+                                <option value="4">Berdiri Di Halaman Pesantren</option>
+                                <option value="5">Kartu Kuning Berdiri Di Halaman Pesantren</option>
                             </select>
                         </div>
                         <div class="d-flex flex-column mb-7 fv-row">

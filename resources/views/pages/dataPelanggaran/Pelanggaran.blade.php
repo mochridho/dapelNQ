@@ -18,7 +18,7 @@
                             <!--begin::Select-->
                             <div class="me-6 my-1">
                                 <a href="{{ route('tambah-data-pelanggaran') }}">
-                                    <button class="btn btn-success btn-sm">Tambah Data</button>
+                                    <button class="btn btn-success btn-sm">Tambah Data Pelanggaran</button>
                                 </a>
                             </div>
                             <!--end::Select-->
@@ -56,8 +56,8 @@
                                 <thead class="fs-7 text-gray-400 text-uppercase">
                                     <tr>
                                         <th class="min-w-50px">No</th>
-                                        <th class="min-w-60px">Kategori Pelanggaran</th>
-                                        <th class="min-w-250px">Nama Pelanggaran</th>
+                                        <th class="min-w-60px">Skala Pelanggaran</th>
+                                        <th class="min-w-250px">Keterangan Pelanggaran</th>
                                         <th class="min-w-30px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -85,7 +85,7 @@
                                     <tr>
                                         <td>3</td>
                                         <td>Ringan</td>
-                                        <td>Keluar Pesantren Tanpa Ijin</td>
+                                        <td>Telat Balek Pesantren</td>
                                         <td class="text-start">
                                             <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
                                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
@@ -102,7 +102,7 @@
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>Berat</td>
+                                        <td>Sedang</td>
                                         <td>Berkelahi</td>
                                         <td class="text-start">
                                             <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>

@@ -116,9 +116,9 @@
                         <!--end::Input group-->
                     </div>
                 </div>
-                <div class="mt-5 d-flex justify-content-end w-100">
+                <div class="mt-5 d-flex justify-content-end w-100 gap-2">
                     <button class="btn btn-danger">Batal</button>
-                    <button class="btn btn-primary">Simpan</button>
+                    <button class="btn btn-success">Simpan</button>
                 </div>
             </div>
         </div>
