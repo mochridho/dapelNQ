@@ -17,7 +17,7 @@
                         <div class="card-toolbar my-1">
                             <!--begin::Select-->
                             <div class="me-6 my-1">
-                                <a href="{{ route('tambah-data-pelanggaran') }}">
+                                <a href="{{ route('violations.create') }}">
                                     <button class="btn btn-success btn-sm">Tambah Data</button>
                                 </a>
                             </div>
@@ -57,58 +57,36 @@
                                     <tr>
                                         <th class="min-w-50px">No</th>
                                         <th class="min-w-60px">Kategori Pelanggaran</th>
-                                        <th class="min-w-250px">Nama Pelanggaran</th>
+                                        <th class="min-w-250px">Keterangan Pelanggaran</th>
                                         <th class="min-w-30px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <!--end::Head-->
                                 <!--begin::Body-->
                                 <tbody class="fs-6">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Ringan</td>
-                                        <td>Ghoshop</td>
-                                        <td class="text-start">
-                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Berat</td>
-                                        <td>Mengkonsumsi Bahan Terlarang</td>
-                                        <td class="text-start">
-                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Ringan</td>
-                                        <td>Keluar Pesantren Tanpa Ijin</td>
-                                        <td class="text-start">
-                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Ringan</td>
-                                        <td>Tidak Mengikuti Kegiatan Ubudiah</td>
-                                        <td class="text-start">
-                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Berat</td>
-                                        <td>Berkelahi</td>
-                                        <td class="text-start">
-                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                        </td>
-                                    </tr>
+                                    @forelse ($violations as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->kategori_pelanggaran }}</td>
+                                            <td>{{ $item->keterangan_pelanggaran }}</td>
+                                            <td class="text-start">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <a href="{{ route('violations.edit', $item) }}"
+                                                        class="btn btn-success btn-sm">Edit</a>
+                                                    <form onsubmit="return confirm('apakah anda yakin?')"
+                                                        action="{{ route('violations.destroy', $item) }}" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="4" class="text-center">Data Kosong</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                                 <!--end::Body-->
                             </table>

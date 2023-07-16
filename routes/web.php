@@ -7,19 +7,22 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SanctionController;
 use App\Http\Controllers\SantriController;
+use App\Http\Controllers\ViolationController;
 
 // dashboard
 Route::get('/', [DashboardController::class, 'index']);
 
-// sanksi => sanctions
 Route::prefix('master')->group(function () {
+    // sanksi = sanctions
     Route::resource('sanctions', SanctionController::class);
+    // pelanggaran = violations
+    Route::resource('violations', ViolationController::class);
 });
 
 // data pelanggar
-Route::get('/data-pelanggar', [PelanggarController::class, 'index']);
-Route::get('/tambah-data-pelanggar', [PelanggarController::class, 'tambahDataPelanggar'])->name('tambah-data-pelanggar');
-Route::get('/edit-data-pelanggar', [PelanggarController::class, 'editDataPelanggar'])->name('edit-data-pelanggar');
+// Route::get('/data-pelanggar', [PelanggarController::class, 'index']);
+// Route::get('/tambah-data-pelanggar', [PelanggarController::class, 'tambahDataPelanggar'])->name('tambah-data-pelanggar');
+// Route::get('/edit-data-pelanggar', [PelanggarController::class, 'editDataPelanggar'])->name('edit-data-pelanggar');
 
 // user
 Route::get('/user', [UserController::class, 'index'])->name('user');
@@ -27,9 +30,9 @@ Route::get('/tambah-data-user', [UserController::class, 'tambahDataUser'])->name
 Route::get('/edit-data-user', [UserController::class, 'editDataUser'])->name('edit-data-user');
 
 // pelanggaran
-Route::get('/pelanggaran', [PelanggaranController::class, 'index']);
-Route::get('/tambah-data-pelanggran', [PelanggaranController::class, 'tambahDataPelanggaran'])->name('tambah-data-pelanggaran');
-Route::get('/edit-data-pelanggran', [PelanggaranController::class, 'editDataPelanggaran'])->name('edit-data-pelanggaran');
+// Route::get('/pelanggaran', [PelanggaranController::class, 'index']);
+// Route::get('/tambah-data-pelanggran', [PelanggaranController::class, 'tambahDataPelanggaran'])->name('tambah-data-pelanggaran');
+// Route::get('/edit-data-pelanggran', [PelanggaranController::class, 'editDataPelanggaran'])->name('edit-data-pelanggaran');
 
 // santri
 Route::get('/santri', [SantriController::class, 'index']);

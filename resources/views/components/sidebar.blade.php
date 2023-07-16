@@ -128,8 +128,8 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link {{ Request::url() == url('/pelanggaran') ? 'active' : '' }}"
-                                href="pelanggaran">
+                            <a class="menu-link {{ Route::is('violations.*') ? 'active' : '' }}"
+                                href="{{ route('violations.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
