@@ -49,7 +49,7 @@
                             <thead class="fs-7 text-gray-400 text-uppercase">
                                 <tr>
                                     <th class="min-w-30px">No</th>
-                                    <th class="min-w-50px">NIS</th>
+                                    <th class="min-w-90px">NIS</th>
                                     <th class="min-w-150px">Nama Santri</th>
                                     <th class="min-w-200px">Keterangan Pelanggaran</th>
                                     <th class="min-w-230px">Sanksi</th>
@@ -82,7 +82,7 @@
 														<td>Mengkonsumsi Bahan Terlarang</td>
 														<td>Pemberian Surat Kepada Orang Tua</td>
                                                         <td><span
-                                                            class="badge bg-success-subtle text-success border border-danger">Selesai</span></td>
+                                                            class="badge bg-success-subtle text-danger border border-danger">Selesai</span></td>
 														<td>
                                                             <div class="text-start d-inline-flex gap-1">
                                                                 <a href="{{ route('edit-data-pelanggar') }}" class="btn btn-success btn-sm">Edit</a>

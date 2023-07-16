@@ -13,7 +13,7 @@
                                 <span class="required">NIS</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="NIS"
+                            <input type="number" class="form-control form-control-solid" placeholder="NIS"
                                 name="card_name" />
                         </div>
                         <!--end::Input group-->
@@ -41,7 +41,7 @@
                                 <span class="required">Tanggal Lahir</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Tanggal Lahir"
+                            <input type="date" class="form-control form-control-solid" placeholder="Tanggal Lahir"
                                 name="card_name" />
                         </div>
                         <!--end::Input group-->
@@ -49,41 +49,16 @@
                     <div class="col-lg-6">
                         <!--begin::Input group-->
                         <div class="d-flex flex-column mb-7 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                                <span class="required">Alamat</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Alamat"
-                                name="card_name" />
-                        </div>
-                        <!--end::Input group-->
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-lg-6">
-                        <!--begin::Input group-->
-                        <div class="d-flex flex-column mb-7 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                                <span class="required">Kamar</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Kamar"
-                                name="card_name" />
-                        </div>
-                        <!--end::Input group-->
-                    </div>
-                    <div class="col-lg-6">
-                        <!--begin::Input group-->
-                        <div class="d-flex flex-column mb-7 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                                <span class="required">Pendidikan</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Pendidikan"
-                                name="card_name" />
+                            <label class="required fs-6 fw-bold mb-2">Kamar</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
+                                data-placeholder="Pilih Kamar" name="target_assign">
+                                <option value="">Select Kamar...</option>
+                                <option value="1">Ali</option>
+                                <option value="2">Umar</option>
+                                <option value="3">Ustman</option>
+                                <option value="4">Abu Bakar</option>
+                                <option value="5">Hurairah</option>
+                            </select>
                         </div>
                         <!--end::Input group-->
                     </div>
@@ -105,6 +80,25 @@
                     <div class="col-lg-6">
                         <!--begin::Input group-->
                         <div class="d-flex flex-column mb-7 fv-row">
+                            <label class="required fs-6 fw-bold mb-2">Pendidikan</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
+                                data-placeholder="Pilih Pendidikan" name="target_assign">
+                                <option value="">Select Pendidikan...</option>
+                                <option value="1">MI</option>
+                                <option value="2">SD</option>
+                                <option value="3">Stanawiyah</option>
+                                <option value="4">SMP</option>
+                                <option value="5">Aliyah</option>
+                                <option value="6">SMA</option>
+                            </select>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <!--begin::Input group-->
+                        <div class="d-flex flex-column mb-7 fv-row">
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
                                 <span class="required">No HP</span>
@@ -112,6 +106,21 @@
                             <!--end::Label-->
                             <input type="text" class="form-control form-control-solid" placeholder="No Hp"
                                 name="card_name" />
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <div class="col-lg-6">
+                        <!--begin::Input group-->
+                        <div class="d-flex flex-column mb-7 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                <span class="required">Alamat</span>
+                            </label>
+                            <!--end::Label-->
+                            <div class="form-floating">
+                                <textarea class="form-control form-control-solid" placeholder="Alamat" id="floatingTextarea2"
+                                    style="height: 100px"></textarea>
+                            </div>
                         </div>
                         <!--end::Input group-->
                     </div>

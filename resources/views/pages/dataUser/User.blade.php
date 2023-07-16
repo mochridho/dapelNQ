@@ -49,8 +49,10 @@
                             <thead class="fs-7 text-gray-400 text-uppercase">
                                 <tr>
                                     <th class="min-w-50px">No</th>
+                                    <th class="min-w-150px">Name</th>
+                                    <th class="min-w-100px">Username</th>
+                                    <th class="min-w-250px">Email</th>
                                     <th class="min-w-60px">Rule</th>
-                                    <th class="min-w-250px">Username</th>
                                     <th class="min-w-30px">Aksi</th>
                                 </tr>
                             </thead>
@@ -59,16 +61,19 @@
 												<tbody class="fs-6">
 													<tr>
 														<td>1</td>
+														<td>Moch Ridho</td>
 														<td>Admin</td>
+														<td>admin@gmail.com</td>
 														<td>Admin</td>
 														<td class="text-start">
 															<a href="{{ route('edit-data-user') }}" class="btn btn-success btn-sm">Edit</a>
-															<a href="#" class="btn btn-danger btn-sm">Hapus</a>
 														</td>
 													</tr>
 													<tr>
 														<td>2</td>
+														<td>Milfin AI</td>
 														<td>Penyidik</td>
+														<td>penyidik@gmail.com</td>
 														<td>Penyidik</td>
 														<td class="text-start">
 															<a href="{{ route('edit-data-user') }}" class="btn btn-success btn-sm">Edit</a>
@@ -77,7 +82,9 @@
 													</tr>
 													<tr>
 														<td>3</td>
+														<td>Abdurrahman</td>
 														<td>Sekretaris</td>
+														<td>sekretaris@gmail.com</td>
 														<td>Sekretaris</td>
 														<td class="text-start">
 															<a href="{{route('edit-data-user')}}" class="btn btn-success btn-sm">Edit</a>

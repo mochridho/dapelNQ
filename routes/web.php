@@ -1,12 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelanggarController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SanksiController;
 use App\Http\Controllers\SantriController;
+
+
+// login
+Route::get('/login', [LoginController::class, 'index']);
 
 // dashboard
 Route::get('/', [DashboardController::class, 'index']);
@@ -35,4 +40,8 @@ Route::get('/edit-data-sanksi', [SanksiController::class, 'editDataSanksi'])->na
 Route::get('/santri', [SantriController::class, 'index']);
 Route::get('/tambah-data-santri', [SantriController::class, 'tambahDataSantri'])->name('tambah-data-santri');
 Route::get('/edit-data-santri', [SantriController::class, 'editDataSantri'])->name('edit-data-santri');
+
+// wali santri
+Route::get('/wali-santri', [WaliSantriController::class, 'index']);
+
 
