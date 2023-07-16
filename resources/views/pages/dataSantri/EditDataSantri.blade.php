@@ -110,6 +110,23 @@
                         <!--end::Input group-->
                     </div>
                     <div class="col-lg-6">
+                         <!--begin::Input group-->
+                         <div class="d-flex flex-column mb-7 fv-row">
+                            <label class="required fs-6 fw-bold mb-2">Jenis Kelamin</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
+                                data-placeholder="Pilih Jenis Kelamin" name="target_assign">
+                                <option value="">Select Jenis Kelamin...</option>
+                                <option value="1">Laki-laki</option>
+                                <option value="2">Perempuan</option>
+                            </select>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                    </div>
+                    <div class="col-lg-6">
                         <!--begin::Input group-->
                         <div class="d-flex flex-column mb-7 fv-row">
                             <!--begin::Label-->

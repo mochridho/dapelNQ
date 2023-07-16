@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SanksiController;
 use App\Http\Controllers\SantriController;
+use App\Http\Controllers\WaliSantriController;
 
 
 // login

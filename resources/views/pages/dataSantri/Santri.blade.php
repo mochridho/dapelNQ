@@ -59,6 +59,7 @@
                                         <th class="min-w-90px">NIS</th>
                                         <th class="min-w-200px">Nama Santri</th>
                                         <th class="min-w-150px">Tanggal Lahir</th>
+                                        <th class="min-w-150px">Jenis Kelamin</th>
                                         <th class="min-w-200px">alamat</th>
                                         <th class="min-w-100px">Pendidikan</th>
                                         <th class="min-w-170px">Nama Wali</th>
@@ -75,6 +76,7 @@
                                             <td>2020</td>
                                             <td>Abdul Mannan</td>
                                             <td>14072001</td>
+                                            <td>Laki-laki</td>
                                             <td>Besuki-Situbondo</td>
                                             <td>MTs</td>
                                             <td>Mandalaaa</td>
@@ -93,6 +95,7 @@
                                             <td>2022</td>
                                             <td>Abdul Malik</td>
                                             <td>14072002</td>
+                                            <td>Laki-laki</td>
                                             <td>Mlandingan-Situbondo</td>
                                             <td>MI</td>
                                             <td>Sanusi</td>
@@ -111,6 +114,7 @@
                                             <td>2023</td>
                                             <td>Abdus Salam</td>
                                             <td>14072003</td>
+                                            <td>Laki-laki</td>
                                             <td>Bungatan-Situbondo</td>
                                             <td>MA</td>
                                             <td>Samsuddin</td>
@@ -129,6 +133,7 @@
                                             <td>2024</td>
                                             <td>Mannan</td>
                                             <td>14072001</td>
+                                            <td>Laki-laki</td>
                                             <td>Besuk-Probolinggo</td>
                                             <td>MTs</td>
                                             <td>Anjas</td>
@@ -147,6 +152,7 @@
                                             <td>2025</td>
                                             <td>Malik</td>
                                             <td>14072001</td>
+                                            <td>Laki-laki</td>
                                             <td>Kraksaan-Situbondo</td>
                                             <td>MTs</td>
                                             <td>AHMAD</td>
