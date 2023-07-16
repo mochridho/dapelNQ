@@ -95,7 +95,7 @@
                     </a>
                 </div>
                 <div data-kt-menu-trigger="click"
-                    class="menu-item menu-accordion {{ Request::url() == url('/pelanggaran') || Request::url() == url('/user') || Request::url() == url('/santri') || Request::url() == url('/sanksi') ? 'show' : '' }}">
+                    class="menu-item menu-accordion {{ Request::url() == url('/pelanggaran') || Request::url() == url('/user') || Request::url() == url('/santri') || Request::url() == url('/sanctions') ? 'show' : '' }}">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
@@ -134,8 +134,8 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link {{ Request::url() == url('/sanksi') ? 'active' : '' }}"
-                                href="sanksi">
+                            <a class="menu-link {{ Route::is('sanctions.index') ? 'active' : '' }}"
+                                href="{{ route('sanctions.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
