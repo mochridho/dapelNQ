@@ -97,8 +97,7 @@
                 {{-- {{ Request::url() == url('/pelanggaran') || Request::url() == url('/user') || Request::url() == url('/santri') || Request::url() == url('') ? 'show' : '' }} --}}
                 <div data-kt-menu-trigger="click"
                     class="menu-item menu-accordion
-                    {{ strpos(Route::currentRouteName(), 'master.sanctions') == 0 ? 'show' : '' }}
-                    ">
+                    {{ strpos(Route::currentRouteName(), 'master.') !== false ? 'show' : '' }}">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
@@ -128,8 +127,8 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link {{ Route::is('violations.*') ? 'active' : '' }}"
-                                href="{{ route('violations.index') }}">
+                            <a class="menu-link {{ Route::is('master.violations.*') ? 'active' : '' }}"
+                                href="{{ route('master.violations.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -137,8 +136,8 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link {{ Route::is('sanctions.*') ? 'active' : '' }}"
-                                href="{{ route('sanctions.index') }}">
+                            <a class="menu-link {{ Route::is('master.sanctions.*') ? 'active' : '' }}"
+                                href="{{ route('master.sanctions.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -146,8 +145,8 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link  {{ Request::url() == url('/santri') ? 'active' : '' }}"
-                                href="santri">
+                            <a class="menu-link  {{ Route::is('master.santri.*') ? 'active' : '' }}"
+                                href="{{ route('master.santri.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

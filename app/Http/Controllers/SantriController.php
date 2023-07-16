@@ -2,19 +2,95 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Santri;
 use Illuminate\Http\Request;
 
 class SantriController extends Controller
 {
-    public function index() {
-        return view('pages.dataSantri.Santri');
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return view('pages.santri.index', [
+            'santri' => Santri::latest()->get(),
+        ]);
     }
 
-    public function tambahDataSantri() {
-        return view('pages.dataSantri.TambahDataSantri');
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('pages.santri.create');
     }
 
-    public function editDataSantri() {
-        return view('pages.dataSantri.EditDataSantri');
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'nis' => 'required|integer|unique:santris,nis',
+            'nama_santri' => 'required',
+            'nama_wali' => 'nullable',
+            'jk' => 'required|in:L,P',
+            'tgl_lahir' => 'required|date',
+            'kamar' => 'required',
+            'pendidikan' => 'required',
+            'no_hp' => 'nullable',
+            'alamat' => 'nullable',
+        ]);
+        // return $data;
+        Santri::create($data);
+        return redirect()->route('master.santri.index')->with('success', 'Data Santri berhasil ditambahkan');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Santri $santri)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Santri $santri)
+    {
+        return view('pages.santri.edit', [
+            'santri' => $santri,
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Santri $santri)
+    {
+         $data = $request->validate([
+            'nis' => 'required|integer|unique:santris,nis,' . $santri->id,
+            'nama_santri' => 'required',
+            'nama_wali' => 'nullable',
+            'jk' => 'required|in:L,P',
+            'tgl_lahir' => 'required|date',
+            'kamar' => 'required',
+            'pendidikan' => 'required',
+            'no_hp' => 'nullable',
+            'alamat' => 'nullable',
+        ]);
+        // return $data;
+        $santri->update($data);
+        return redirect()->route('master.santri.index')->with('success', 'Data Santri berhasil diubah');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Santri $santri)
+    {
+        $santri->delete();
+        return back()->with('success', 'Data Santri berhasil dihapus');
     }
 }

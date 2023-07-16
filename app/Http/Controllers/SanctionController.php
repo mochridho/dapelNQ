@@ -37,7 +37,7 @@ class SanctionController extends Controller
         ]);
         $data['slug'] = str($request->keterangan_sanksi . '-' . str()->random(5))->slug();
         Sanction::create($data);
-        return redirect()->route('sanctions.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('master.sanctions.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -65,7 +65,7 @@ class SanctionController extends Controller
      */
     public function update(Request $request, Sanction $sanction)
     {
-         $data = $request->validate([
+        $data = $request->validate([
             'keterangan_sanksi' => 'required',
             'kategori_sanksi' => 'required',
         ]);
@@ -75,7 +75,7 @@ class SanctionController extends Controller
             $data['slug'] = $sanction->slug;
         }
         $sanction->update($data);
-        return redirect()->route('sanctions.index')->with('success', 'Data berhasil diubah');
+        return redirect()->route('master.sanctions.index')->with('success', 'Data berhasil diubah');
     }
 
     /**

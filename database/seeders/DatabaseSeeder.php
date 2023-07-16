@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SanctionSeeder::class,
             ViolationSeeder::class,
+            SantriSeeder::class,
         ]);
     }
 }

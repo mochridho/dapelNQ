@@ -36,7 +36,7 @@ class ViolationController extends Controller
         ]);
         $data['slug'] = str($request->keterangan_pelanggaran . '-' . str()->random(5))->slug();
         Violation::create($data);
-        return redirect()->route('violations.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('master.violations.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -72,7 +72,7 @@ class ViolationController extends Controller
             $data['slug'] = $violation->slug;
         }
         $violation->update($data);
-        return redirect()->route('violations.index')->with('success', 'Data berhasil diubah');
+        return redirect()->route('master.violations.index')->with('success', 'Data berhasil diubah');
     }
 
     /**

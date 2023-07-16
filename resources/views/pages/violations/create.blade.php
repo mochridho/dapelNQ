@@ -3,7 +3,7 @@
     <div id="kt_content_container" class="container-xxl">
         <h1>Tambah Data Pelanggaran</h1>
         <div class="card mt-lg-6">
-            <form action="{{ route('violations.store') }}" method="post">
+            <form action="{{ route('master.violations.store') }}" method="post">
                 @csrf
                 <div class="card-body">
                     <div class="d-flex flex-column mb-7 fv-row">

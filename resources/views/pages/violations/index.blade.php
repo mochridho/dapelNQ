@@ -17,7 +17,7 @@
                         <div class="card-toolbar my-1">
                             <!--begin::Select-->
                             <div class="me-6 my-1">
-                                <a href="{{ route('violations.create') }}">
+                                <a href="{{ route('master.violations.create') }}">
                                     <button class="btn btn-success btn-sm">Tambah Data</button>
                                 </a>
                             </div>
@@ -67,14 +67,15 @@
                                     @forelse ($violations as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->kategori_pelanggaran }}</td>
-                                            <td>{{ $item->keterangan_pelanggaran }}</td>
+                                            <td class="text-capitalize">{{ $item->kategori_pelanggaran }}</td>
+                                            <td class="text-capitalize">{{ $item->keterangan_pelanggaran }}</td>
                                             <td class="text-start">
                                                 <div class="d-inline-flex align-items-center gap-1">
-                                                    <a href="{{ route('violations.edit', $item) }}"
+                                                    <a href="{{ route('master.violations.edit', $item) }}"
                                                         class="btn btn-success btn-sm">Edit</a>
                                                     <form onsubmit="return confirm('apakah anda yakin?')"
-                                                        action="{{ route('violations.destroy', $item) }}" method="post">
+                                                        action="{{ route('master.violations.destroy', $item) }}"
+                                                        method="post">
                                                         @csrf
                                                         @method('delete')
                                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>

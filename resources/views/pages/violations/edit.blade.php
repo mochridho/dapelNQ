@@ -3,7 +3,7 @@
     <div id="kt_content_container" class="container-xxl">
         <h1>Edit Data Pelanggaran</h1>
         <div class="card mt-lg-6">
-            <form action="{{ route('violations.update', $violation) }}" method="post">
+            <form action="{{ route('master.violations.update', $violation) }}" method="post">
                 @csrf
                 @method('PUT')
                 <div class="card-body">

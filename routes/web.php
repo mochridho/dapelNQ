@@ -12,11 +12,13 @@ use App\Http\Controllers\ViolationController;
 // dashboard
 Route::get('/', [DashboardController::class, 'index']);
 
-Route::prefix('master')->group(function () {
+Route::prefix('master')->name('master.')->group(function () {
     // sanksi = sanctions
     Route::resource('sanctions', SanctionController::class);
     // pelanggaran = violations
     Route::resource('violations', ViolationController::class);
+    // santris = santri
+    Route::resource('santri', SantriController::class);
 });
 
 // data pelanggar
@@ -35,6 +37,6 @@ Route::get('/edit-data-user', [UserController::class, 'editDataUser'])->name('ed
 // Route::get('/edit-data-pelanggran', [PelanggaranController::class, 'editDataPelanggaran'])->name('edit-data-pelanggaran');
 
 // santri
-Route::get('/santri', [SantriController::class, 'index']);
-Route::get('/tambah-data-santri', [SantriController::class, 'tambahDataSantri'])->name('tambah-data-santri');
-Route::get('/edit-data-santri', [SantriController::class, 'editDataSantri'])->name('edit-data-santri');
+// Route::get('/santri', [SantriController::class, 'index']);
+// Route::get('/tambah-data-santri', [SantriController::class, 'tambahDataSantri'])->name('tambah-data-santri');
+// Route::get('/edit-data-santri', [SantriController::class, 'editDataSantri'])->name('edit-data-santri');

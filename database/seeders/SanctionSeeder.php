@@ -16,22 +16,22 @@ class SanctionSeeder extends Seeder
             [
                 'keterangan_sanksi' => 'berdiri di halaman pesantren',
                 'slug' => 'berdiri-di-halaman-pesantren-dawda',
-                'kategori_sanksi' => 'ringan',
+                'kategori_sanksi' => 'Moral',
             ],
             [
-                'keterangan_sanksi' => 'merangkak di halaman pesantren',
-                'slug' => 'merangkak-di-halaman-pesantren-aweww',
-                'kategori_sanksi' => 'ringan',
+                'keterangan_sanksi' => 'pembersihan surat kepada orang tua',
+                'slug' => 'pembersihan-surat-kepada-orang-tua-awdaw',
+                'kategori_sanksi' => 'Kode etik',
+            ],
+            [
+                'keterangan_sanksi' => 'membayar denda',
+                'slug' => 'membayar-denda-da33aw',
+                'kategori_sanksi' => 'Administrasi',
             ],
             [
                 'keterangan_sanksi' => 'kartu kuning dan berdiri di halaman pesantren',
-                'slug' => 'kartu-kuning-dan-berdiri-di-halaman-pesantren-atyww',
-                'kategori_sanksi' => 'berat',
-            ],
-            [
-                'keterangan_sanksi' => 'di asingkan dari pesantren',
-                'slug' => 'di-asingkan-dari-pesantren-awwpo',
-                'kategori_sanksi' => 'berat',
+                'slug' => 'kartu-kuning-dan-berdiri-di-halaman-pesantren-aw23w',
+                'kategori_sanksi' => 'Moral',
             ],
         ];
         foreach ($sanctions as $sanction) {

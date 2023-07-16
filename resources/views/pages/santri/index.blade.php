@@ -17,7 +17,7 @@
                         <div class="card-toolbar my-1">
                             <!--begin::Select-->
                             <div class="me-6 my-1">
-                                <a href="{{ route('tambah-data-santri') }}">
+                                <a href="{{ route('master.santri.create') }}">
                                     <button class="btn btn-success btn-sm">Tambah Data Santri</button>
                                 </a>
                             </div>
@@ -57,12 +57,13 @@
                                     <tr>
                                         <th class="min-w-30px">No</th>
                                         <th class="min-w-90px">NIS</th>
-                                        <th class="min-w-170px">Nama Santri</th>
+                                        <th class="min-w-lg-125px">Nama Santri</th>
                                         <th class="min-w-150px">Tanggal Lahir</th>
+                                        <th class="min-w-150px">Jenis Kelamin</th>
                                         <th class="min-w-150px">alamat</th>
                                         <th class="min-w-100px">Pendidikan</th>
-                                        <th class="min-w-170px">Nama Wali</th>
-                                        <th class="min-w-100px">Kamar</th>
+                                        <th class="min-w-lg-125px">Nama Wali</th>
+                                        <th class="min-w-125px">Kamar</th>
                                         <th class="min-w-150px">No HP</th>
                                         <th class="min-w-100px">Aksi</th>
                                     </tr>
@@ -70,26 +71,37 @@
                                 <!--end::Head-->
                                 <!--begin::Body-->
                                 <tbody class="fs-6">
-                                    @for ($i = 0; $i < 10; $i++)
+                                    @forelse ($santri as $item)
                                         <tr>
-                                            <td>1</td>
-                                            <td>2020</td>
-                                            <td>AbdulMannan</td>
-                                            <td>14072001</td>
-                                            <td>Besuki-Situbondo</td>
-                                            <td>MTs</td>
-                                            <td>Mandalaaa</td>
-                                            <td>AlMulku</td>
-                                            <td>123456789</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->nis }}</td>
+                                            <td>{{ $item->nama_santri }}</td>
+                                            <td>{{ $item->tgl_lahir }}</td>
+                                            <td>{{ $item->jk == 'L' ? 'laki - laki' : 'perempuan' }}</td>
+                                            <td>{{ $item->alamat }}</td>
+                                            <td>{{ $item->pendidikan }}</td>
+                                            <td>{{ $item->nama_wali }}</td>
+                                            <td>{{ $item->kamar }}</td>
+                                            <td>{{ $item->no_hp }}</td>
                                             <td>
                                                 <div class="text-start d-inline-flex gap-1">
-                                                    <a href="{{ route('edit-data-santri') }}"
+                                                    <a href="{{ route('master.santri.edit', $item) }}"
                                                         class="btn btn-success btn-sm">Edit</a>
-                                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                    <form onsubmit="return confirm('apakah anda yakin?')"
+                                                        action="{{ route('master.santri.destroy', $item) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                    </form>
                                                 </div>
                                             </td>
                                         </tr>
-                                    @endfor
+                                    @empty
+                                        <tr>
+                                            <td colspan="10" class="text-center">Data Kosong</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                                 <!--end::Body-->
                             </table>

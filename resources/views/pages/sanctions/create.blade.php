@@ -3,7 +3,7 @@
     <div id="kt_content_container" class="container-xxl">
         <h1>Tambah Data Sanksi</h1>
         <div class="card mt-lg-6">
-            <form action="{{ route('sanctions.store') }}" method="post">
+            <form action="{{ route('master.sanctions.store') }}" method="post">
                 @csrf
                 <div class="card-body">
                     <div class="d-flex flex-column mb-7 fv-row">
@@ -15,8 +15,9 @@
                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
                             data-placeholder="Select Pelanggaran" name="kategori_sanksi">
                             <option value="">Select sanksi...</option>
-                            <option value="ringan">ringan</option>
-                            <option value="berat">berat</option>
+                            <option value="Kode etik">Kode etik</option>
+                            <option value="Moral">Moral</option>
+                            <option value="Administrasi">Administrasi</option>
                         </select>
                     </div>
                     <div class="d-flex flex-column mb-7 fv-row">

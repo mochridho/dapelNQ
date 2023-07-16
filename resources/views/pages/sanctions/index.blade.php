@@ -17,7 +17,7 @@
                         <div class="card-toolbar my-1">
                             <!--begin::Select-->
                             <div class="me-6 my-1">
-                                <a href="{{ route('sanctions.create') }}">
+                                <a href="{{ route('master.sanctions.create') }}">
                                     <button class="btn btn-success btn-sm">Tambah Data</button>
                                 </a>
                             </div>
@@ -71,10 +71,11 @@
                                             <td class="text-capitalize">{{ $item->keterangan_sanksi }}</td>
                                             <td class="text-start">
                                                 <div class="d-inline-flex align-items-center gap-1">
-                                                    <a href="{{ route('sanctions.edit', $item) }}"
+                                                    <a href="{{ route('master.sanctions.edit', $item) }}"
                                                         class="btn btn-success btn-sm">Edit</a>
                                                     <form onsubmit="return confirm('apakah anda yakin?')"
-                                                        action="{{ route('sanctions.destroy', $item) }}" method="post">
+                                                        action="{{ route('master.sanctions.destroy', $item) }}"
+                                                        method="post">
                                                         @csrf
                                                         @method('delete')
                                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
