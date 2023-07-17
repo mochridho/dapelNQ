@@ -3,16 +3,21 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PelanggarController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SanctionController;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\ViolationController;
 
-// dashboard
-Route::get('/', [DashboardController::class, 'index']);
 
-Route::prefix('master')->name('master.')->group(function () {
+Route::middleware('auth')->group(function () {
+    // dashboard
+    Route::get('/', [DashboardController::class, 'index']);
+
+    // logout
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+Route::prefix('master')->middleware('auth')->name('master.')->group(function () {
     // sanksi = sanctions
     Route::resource('sanctions', SanctionController::class);
     // pelanggaran = violations
@@ -24,16 +29,12 @@ Route::prefix('master')->name('master.')->group(function () {
 });
 
 // login
-Route::get('/login', [AuthController::class, 'formLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'authenticate']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'formLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'authenticate']);
+});
 
 // data pelanggar
 // Route::get('/data-pelanggar', [PelanggarController::class, 'index']);
 // Route::get('/tambah-data-pelanggar', [PelanggarController::class, 'tambahDataPelanggar'])->name('tambah-data-pelanggar');
 // Route::get('/edit-data-pelanggar', [PelanggarController::class, 'editDataPelanggar'])->name('edit-data-pelanggar');
-
-// user
-// Route::get('/user', [UserController::class, 'index'])->name('user');
-// Route::get('/tambah-data-user', [UserController::class, 'tambahDataUser'])->name('tambah-data-user');
-// Route::get('/edit-data-user', [UserController::class, 'editDataUser'])->name('edit-data-user');
