@@ -87,9 +87,26 @@
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="post" id="deleteForm">
+                        @csrf
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="confirmDelete(event, 'deleteForm' )">
+                            <i class="bx bx-trash me-1"></i>
+                            Logout</a>
+                    </form>
+                    {{-- <a class="dropdown-item" href="#">Log Out</a> --}}
+                </li>
             </ul>
         </div>
         <!--end::Toolbar-->
     </div>
 </div>
+<script>
+    function confirmDelete(event, formId) {
+        event.preventDefault();
+        if (confirm('Apakah Anda yakin ingin logout?')) {
+            document.getElementById(formId).submit();
+        }
+    }
+</script>

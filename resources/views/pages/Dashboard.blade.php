@@ -14,7 +14,7 @@
                             </path>
                         </svg>
                         <!--end::Svg Icon-->
-                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">18 Jenis</div>
+                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">{{ $violations }} Jenis</div>
                         <div class="fw-bold text-white">Jumlah Jenis Pelanggaran</div>
                     </div>
                     <!--end::Body-->
@@ -35,7 +35,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">14 Sanksi</div>
+                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">{{ $sanctions }} Sanksi</div>
                         <div class="fw-bold text-white">Jumlah Sanksi</div>
                     </div>
                     <!--end::Body-->
@@ -71,7 +71,8 @@
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr070.svg-->
                         <span class="svg-icon svg-icon-gray-100 svg-icon-3x ms-n1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24">
-                                <path fill="#fff" d="M9 18H4V10H9V18ZM15 18H10V6H15V18ZM21 18H16V2H21V18ZM22 22H3V20H22V22Z"></path>
+                                <path fill="#fff"
+                                    d="M9 18H4V10H9V18ZM15 18H10V6H15V18ZM21 18H16V2H21V18ZM22 22H3V20H22V22Z"></path>
                             </svg>
                         </span>
                         <!--end::Svg Icon-->

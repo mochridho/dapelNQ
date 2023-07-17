@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelanggarController;
@@ -22,12 +23,17 @@ Route::prefix('master')->name('master.')->group(function () {
     Route::resource('users', UserController::class);
 });
 
+// login
+Route::get('/login', [AuthController::class, 'formLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 // data pelanggar
 // Route::get('/data-pelanggar', [PelanggarController::class, 'index']);
 // Route::get('/tambah-data-pelanggar', [PelanggarController::class, 'tambahDataPelanggar'])->name('tambah-data-pelanggar');
 // Route::get('/edit-data-pelanggar', [PelanggarController::class, 'editDataPelanggar'])->name('edit-data-pelanggar');
 
 // user
-Route::get('/user', [UserController::class, 'index'])->name('user');
-Route::get('/tambah-data-user', [UserController::class, 'tambahDataUser'])->name('tambah-data-user');
-Route::get('/edit-data-user', [UserController::class, 'editDataUser'])->name('edit-data-user');
+// Route::get('/user', [UserController::class, 'index'])->name('user');
+// Route::get('/tambah-data-user', [UserController::class, 'tambahDataUser'])->name('tambah-data-user');
+// Route::get('/edit-data-user', [UserController::class, 'editDataUser'])->name('edit-data-user');
