@@ -17,13 +17,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::prefix('master')->middleware('auth')->name('master.')->group(function () {
+Route::prefix('master')->middleware(['auth', 'auth.administrator'])->name('master.')->group(function () {
     // sanksi = sanctions
     Route::resource('sanctions', SanctionController::class);
     // pelanggaran = violations
     Route::resource('violations', ViolationController::class);
     // santris = santri
-    Route::resource('santri', SantriController::class);
+    Route::resource('santri', SantriController::class)->withoutMiddleware('auth.administrator');
     // users = user
     Route::resource('users', UserController::class);
 });

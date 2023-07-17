@@ -119,42 +119,54 @@
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion">
-                        <div class="menu-item">
-                            <a class="menu-link {{ Route::is('master.users.*') ? 'active' : '' }}"
-                                href="{{ route('master.users.index') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">User</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link {{ Route::is('master.violations.*') ? 'active' : '' }}"
-                                href="{{ route('master.violations.index') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Pelanggaran</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link {{ Route::is('master.sanctions.*') ? 'active' : '' }}"
-                                href="{{ route('master.sanctions.index') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Sanksi</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link  {{ Route::is('master.santri.*') ? 'active' : '' }}"
-                                href="{{ route('master.santri.index') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Santri</span>
-                            </a>
-                        </div>
+                        @if (Auth::user()->roles == 'admin' || Auth::user()->roles == 'penyidik')
+                            <div class="menu-item">
+                                <a class="menu-link {{ Route::is('master.users.*') ? 'active' : '' }}"
+                                    href="{{ route('master.users.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">User</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a class="menu-link {{ Route::is('master.violations.*') ? 'active' : '' }}"
+                                    href="{{ route('master.violations.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Pelanggaran</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a class="menu-link {{ Route::is('master.sanctions.*') ? 'active' : '' }}"
+                                    href="{{ route('master.sanctions.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Sanksi</span>
+                                </a>
+                            </div>
+                            <div class="menu-item">
+                                <a class="menu-link  {{ Route::is('master.santri.*') ? 'active' : '' }}"
+                                    href="{{ route('master.santri.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Santri</span>
+                                </a>
+                            </div>
+                        @else
+                            <div class="menu-item">
+                                <a class="menu-link  {{ Route::is('master.santri.*') ? 'active' : '' }}"
+                                    href="{{ route('master.santri.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Santri</span>
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

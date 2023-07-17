@@ -16,11 +16,13 @@
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar my-1">
                             <!--begin::Select-->
-                            <div class="me-6 my-1">
-                                <a href="{{ route('master.users.create') }}">
-                                    <button class="btn btn-success btn-sm">Tambah Data User</button>
-                                </a>
-                            </div>
+                            @if (auth()->user()->roles == 'admin')
+                                <div class="me-6 my-1">
+                                    <a href="{{ route('master.users.create') }}">
+                                        <button class="btn btn-success btn-sm">Tambah Data User</button>
+                                    </a>
+                                </div>
+                            @endif
                             <!--end::Select-->
                             <!--begin::Search-->
                             <div class="d-flex align-items-center position-relative my-1">
@@ -60,7 +62,9 @@
                                         <th class="min-w-100px">Username</th>
                                         <th class="min-w-250px">Email</th>
                                         <th class="min-w-60px">Role</th>
-                                        <th class="min-w-30px">Aksi</th>
+                                        @if (auth()->user()->roles == 'admin')
+                                            <th class="min-w-30px">Aksi</th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <!--end::Head-->
@@ -73,18 +77,22 @@
                                             <td>{{ $item->username }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->roles }}</td>
-                                            <td class="text-start">
-                                                <div class="text-start d-inline-flex gap-1">
-                                                    <a href="{{ route('master.users.edit', $item) }}"
-                                                        class="btn btn-success btn-sm">Edit</a>
-                                                    <form onsubmit="return confirm('apakah anda yakin?')"
-                                                        action="{{ route('master.users.destroy', $item) }}" method="post">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                                    </form>
-                                                </div>
-                                            </td>
+                                            @if (auth()->user()->roles == 'admin')
+                                                <td class="text-start">
+                                                    <div class="text-start d-inline-flex gap-1">
+                                                        <a href="{{ route('master.users.edit', $item) }}"
+                                                            class="btn btn-success btn-sm">Edit</a>
+                                                        <form onsubmit="return confirm('apakah anda yakin?')"
+                                                            action="{{ route('master.users.destroy', $item) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit"
+                                                                class="btn btn-danger btn-sm">Hapus</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            @endif
                                         </tr>
                                     @empty
                                         <tr>

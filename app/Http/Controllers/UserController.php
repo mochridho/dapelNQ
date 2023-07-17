@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -13,8 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::where('roles', '!=', 'admin')
+        ->where('id', '!=', Auth::user()->id)
+        ->latest()->get();
         return view('pages.users.index', [
-            'users' => User::latest()->get(),
+            'users' =>  $users,
         ]);
     }
 
@@ -23,6 +27,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->roles != 'admin') {
+            return redirect()->route('master.users.index')->with('error', 'Anda tidak memiliki hak akses');
+        }
         return view('pages.users.create');
     }
 
@@ -57,6 +64,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+         if (Auth::user()->roles != 'admin') {
+            return redirect()->route('master.users.index')->with('error', 'Anda tidak memiliki hak akses');
+        }
         return view('pages.users.edit', [
             'user' => $user,
         ]);

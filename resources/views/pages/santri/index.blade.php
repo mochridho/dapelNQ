@@ -16,11 +16,13 @@
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar my-1">
                             <!--begin::Select-->
-                            <div class="me-6 my-1">
-                                <a href="{{ route('master.santri.create') }}">
-                                    <button class="btn btn-success btn-sm">Tambah Data Santri</button>
-                                </a>
-                            </div>
+                            @if (auth()->user()->roles == 'admin' || auth()->user()->roles == 'sekretaris')
+                                <div class="me-6 my-1">
+                                    <a href="{{ route('master.santri.create') }}">
+                                        <button class="btn btn-success btn-sm">Tambah Data Santri</button>
+                                    </a>
+                                </div>
+                            @endif
                             <!--end::Select-->
                             <!--begin::Search-->
                             <div class="d-flex align-items-center position-relative my-1">
@@ -65,7 +67,9 @@
                                         <th class="min-w-lg-125px">Nama Wali</th>
                                         <th class="min-w-125px">Kamar</th>
                                         <th class="min-w-150px">No HP</th>
-                                        <th class="min-w-100px">Aksi</th>
+                                        @if (auth()->user()->roles == 'admin' || auth()->user()->roles == 'sekretaris')
+                                            <th class="min-w-100px">Aksi</th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <!--end::Head-->
@@ -83,19 +87,22 @@
                                             <td>{{ $item->nama_wali }}</td>
                                             <td>{{ $item->kamar }}</td>
                                             <td>{{ $item->no_hp }}</td>
-                                            <td>
-                                                <div class="text-start d-inline-flex gap-1">
-                                                    <a href="{{ route('master.santri.edit', $item) }}"
-                                                        class="btn btn-success btn-sm">Edit</a>
-                                                    <form onsubmit="return confirm('apakah anda yakin?')"
-                                                        action="{{ route('master.santri.destroy', $item) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                                    </form>
-                                                </div>
-                                            </td>
+                                            @if (auth()->user()->roles == 'admin' || auth()->user()->roles == 'sekretaris')
+                                                <td>
+                                                    <div class="text-start d-inline-flex gap-1">
+                                                        <a href="{{ route('master.santri.edit', $item) }}"
+                                                            class="btn btn-success btn-sm">Edit</a>
+                                                        <form onsubmit="return confirm('apakah anda yakin?')"
+                                                            action="{{ route('master.santri.destroy', $item) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit"
+                                                                class="btn btn-danger btn-sm">Hapus</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            @endif
                                         </tr>
                                     @empty
                                         <tr>

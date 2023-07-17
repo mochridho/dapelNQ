@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Santri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SantriController extends Controller
 {
@@ -22,6 +23,9 @@ class SantriController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->roles != 'admin' && Auth::user()->roles != 'sekretaris') {
+            return redirect()->route('master.santri.index')->with('error', 'Anda tidak memiliki hak akses');
+        }
         return view('pages.santri.create');
     }
 
@@ -59,6 +63,9 @@ class SantriController extends Controller
      */
     public function edit(Santri $santri)
     {
+         if (Auth::user()->roles != 'admin' && Auth::user()->roles != 'sekretaris') {
+            return redirect()->route('master.santri.index')->with('error', 'Anda tidak memiliki hak akses');
+        }
         return view('pages.santri.edit', [
             'santri' => $santri,
         ]);
