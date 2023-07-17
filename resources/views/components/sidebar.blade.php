@@ -119,7 +119,8 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
-                            <a class="menu-link {{ Request::url() == url('/user') ? 'active' : '' }}" href="user">
+                            <a class="menu-link {{ Route::is('master.users.*') ? 'active' : '' }}"
+                                href="{{ route('master.users.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
