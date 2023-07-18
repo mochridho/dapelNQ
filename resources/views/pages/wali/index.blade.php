@@ -45,15 +45,18 @@
                             </div>
                             <div class="row">
                                 <div class="col-4">Pelanggaran</div>
-                                <div class="col-7">: {{ $item->violation->keterangan_pelanggaran }}</div>
+                                <div class="col-7 text-capitalize">: {{ $item->violation->keterangan_pelanggaran }}
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">Sanksi</div>
-                                <div class="col-7">: {{ $item->sanction->keterangan_sanksi }}</div>
+                                <div class="col-7 text-capitalize">: {{ $item->sanction->keterangan_sanksi }}</div>
                             </div>
                             <div class="row">
                                 <div class="col-4">Tanggal</div>
-                                <div class="col-7">: {{ $item->created_at }}</div>
+                                <div class="col-7">:
+                                    {{ $item->created_at->format('d/m/y | H:i:s') }}
+                                </div>
                             </div>
                         </div>
                     @empty

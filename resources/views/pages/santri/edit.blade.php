@@ -19,8 +19,12 @@
                                     <span class="required">NIS</span>
                                 </label>
                                 <!--end::Label-->
-                                <input type="number" value="{{ $santri->nis }}" class="form-control form-control-solid"
+                                <input type="number" value="{{ $santri->nis }}"
+                                    class="form-control form-control-solid @error('nis') is-invalid @enderror"
                                     placeholder="NIS" name="nis" />
+                                @error('nis')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <!--end::Input group-->
                         </div>

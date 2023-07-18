@@ -16,8 +16,12 @@
                                 <span class="required">Name</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama"
-                                name="name" />
+                            <input type="text"
+                                class="form-control form-control-solid @error('name') is-invalid @enderror"
+                                placeholder="Masukkan Nama" name="name" />
+                            @error('name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="d-flex flex-column mb-7 fv-row">
                             <!--begin::Label-->
@@ -25,8 +29,12 @@
                                 <span class="required">Username</span>
                             </label>
                             <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Username"
-                                name="username" />
+                            <input type="text"
+                                class="form-control form-control-solid @error('username') is-invalid @enderror"
+                                placeholder="Masukkan Username" name="username" />
+                            @error('username')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="d-flex flex-column mb-7 fv-row">
                             <!--begin::Label-->
@@ -34,8 +42,12 @@
                                 <span class="required">Email</span>
                             </label>
                             <!--end::Label-->
-                            <input type="email" class="form-control form-control-solid" placeholder="Masukkan Username"
-                                name="email" />
+                            <input type="email"
+                                class="form-control form-control-solid @error('email') is-invalid @enderror"
+                                placeholder="Masukkan Username" name="email" />
+                            @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="d-flex flex-column mb-7 fv-row">
                             <label class="required fs-6 fw-bold mb-2">Role</label>
@@ -52,8 +64,12 @@
                                 <span class="required">Password</span>
                             </label>
                             <!--end::Label-->
-                            <input type="password" class="form-control form-control-solid" placeholder="Masukkan Pasword"
-                                name="password" />
+                            <input type="password"
+                                class="form-control form-control-solid @error('password') is-invalid @enderror"
+                                placeholder="Masukkan Pasword" name="password" />
+                            @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mt-5 d-flex justify-content-end w-100">
