@@ -2,9 +2,6 @@
 @section('content')
     <div id="kt_content_container" class="container-xxl">
         <h1>Tambah Data user</h1>
-        @foreach ($errors->all() as $item)
-            {{ $item }}
-        @endforeach
         <div class="card mt-lg-6">
             <form action="{{ route('master.users.store') }}" method="post">
                 @csrf

@@ -4,7 +4,7 @@
         <div class="row g-5 g-xl-8">
             <div class="col-xl-3">
                 <!--begin::Statistics Widget 5-->
-                <a href="#" class="card bg-warning hoverable card-xl-stretch mb-xl-8">
+                <a href="{{ route('master.violations.index') }}" class="card bg-warning hoverable card-xl-stretch mb-xl-8">
                     <!--begin::Body-->
                     <div class="card-body">
                         <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm002.svg-->
@@ -23,7 +23,7 @@
             </div>
             <div class="col-xl-3">
                 <!--begin::Statistics Widget 5-->
-                <a href="#" class="card bg-info hoverable card-xl-stretch mb-xl-8">
+                <a href="{{ route('master.sanctions.index') }}" class="card bg-info hoverable card-xl-stretch mb-xl-8">
                     <!--begin::Body-->
                     <div class="card-body">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen008.svg-->
@@ -44,7 +44,8 @@
             </div>
             <div class="col-xl-3">
                 <!--begin::Statistics Widget 5-->
-                <a href="#" class="card bg-primary hoverable card-xl-stretch mb-5 mb-xl-8">
+                <a href="{{ route('data-of-violations.index') }}"
+                    class="card bg-primary hoverable card-xl-stretch mb-5 mb-xl-8">
                     <!--begin::Body-->
                     <div class="card-body">
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr070.svg-->
@@ -65,7 +66,8 @@
             </div>
             <div class="col-xl-3">
                 <!--begin::Statistics Widget 5-->
-                <a href="#" class="card bg-dark hoverable card-xl-stretch mb-5 mb-xl-8">
+                <a href="{{ route('data-of-violations.index') }}"
+                    class="card bg-dark hoverable card-xl-stretch mb-5 mb-xl-8">
                     <!--begin::Body-->
                     <div class="card-body">
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr070.svg-->
