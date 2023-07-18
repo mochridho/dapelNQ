@@ -155,7 +155,7 @@
                         </div>
                     </div>
                     <div class="mt-5 d-flex justify-content-end w-100 gap-2">
-                        <button class="btn btn-danger">Batal</button>
+                        <a href="{{ route('master.santri.index') }}" class="btn btn-danger">Batal</a>
                         <button type="submit" class="btn btn-success">Update</button>
                     </div>
                 </div>
