@@ -79,8 +79,8 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link {{ Request::url() == url('/data-pelanggar') ? 'active' : '' }}"
-                        href="/data-pelanggar">
+                    <a class="menu-link {{ Route::is('data-of-violations.*') ? 'active' : '' }}"
+                        href="{{ route('data-of-violations.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">

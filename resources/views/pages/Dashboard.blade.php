@@ -56,7 +56,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">0 Proses</div>
+                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">{{ $proses }} Proses</div>
                         <div class="fw-bold text-gray-100">Jumlah Proses Penanganan Pelanggaran</div>
                     </div>
                     <!--end::Body-->
@@ -76,7 +76,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">30 pelanggaran</div>
+                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">{{ $dataPelanggaran }} pelanggaran</div>
                         <div class="fw-bold text-gray-100">Jumlah Data Pelanggaran</div>
                     </div>
                     <!--end::Body-->

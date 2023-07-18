@@ -19,7 +19,7 @@ class SanctionSeeder extends Seeder
                 'kategori_sanksi' => 'Moral',
             ],
             [
-                'keterangan_sanksi' => 'pembersihan surat kepada orang tua',
+                'keterangan_sanksi' => 'pemberian surat kepada orang tua',
                 'slug' => 'pembersihan-surat-kepada-orang-tua-awdaw',
                 'kategori_sanksi' => 'Kode etik',
             ],

@@ -14,4 +14,9 @@ class Violation extends Model
     {
         return 'slug';
     }
+
+    public function dataOfViolations()
+    {
+        return $this->hasMany(DataOfViolation::class);
+    }
 }

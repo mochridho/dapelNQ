@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return 'username';
     }
+
+    public function dataOfViolations()
+    {
+        return $this->hasMany(DataOfViolation::class);
+    }
 }

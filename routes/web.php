@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataOfViolationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SanctionController;
 use App\Http\Controllers\SantriController;
@@ -16,6 +17,9 @@ Route::middleware('auth')->group(function () {
     // logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+// data of violations = data pelanggaran
+Route::resource('data-of-violations', DataOfViolationController::class)->middleware('auth');
 
 Route::prefix('master')->middleware(['auth', 'auth.administrator'])->name('master.')->group(function () {
     // sanksi = sanctions
