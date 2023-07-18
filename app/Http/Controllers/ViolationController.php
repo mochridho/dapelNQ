@@ -10,10 +10,17 @@ class ViolationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Violation::query();
+        if ($request->filled('q')) {
+            $query->where('keterangan_pelanggaran', 'LIKE', '%' . $request->q . '%')
+            ->orWhere('kategori_pelanggaran', 'LIKE', '%' . $request->q . '%');
+        } else {
+            $query->latest();
+        }
         return view('pages.violations.index', [
-            'violations' => Violation::latest()->get(),
+            'violations' => $query->get(),
         ]);
     }
 

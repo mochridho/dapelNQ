@@ -11,10 +11,16 @@ class SantriController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Santri::query();
+        if ($request->filled('q')) {
+            $query->where('nama_santri', 'LIKE', '%' . $request->q . '%');
+        } else {
+            $query->latest();
+        }
         return view('pages.santri.index', [
-            'santri' => Santri::latest()->get(),
+            'santri' => $query->get(),
         ]);
     }
 

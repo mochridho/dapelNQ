@@ -15,12 +15,14 @@ class DataOfViolationController extends Controller
         $this->middleware('auth.administrator')->except('index');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        // $dataOfViolations = DataOfViolation::with(['santri','violation','sanction','user'])->latest()->get();
-        // return $dataOfViolations;
+        $query = DataOfViolation::query();
+        if ($request->filled("q")) {
+            $query->search($request->q);
+        }
         return view('pages.data-of-violations.index',[
-            'data' => DataOfViolation::with(['santri', 'violation', 'sanction', 'user'])->latest()->get(),
+            'data' => $query->latest()->get(),
         ]);
     }
 

@@ -38,9 +38,11 @@
                                     </svg>
                                 </span>
                                 <!--end::Svg Icon-->
-                                <input type="text" id="kt_filter_search"
-                                    class="form-control form-control-solid form-select-sm w-150px ps-9"
-                                    placeholder="Search Order" />
+                                <form action="" method="get">
+                                    <input type="text" name="q" value="{{ request('q') }}" id="kt_filter_search"
+                                        class="form-control form-control-solid form-select-sm w-150px ps-9"
+                                        placeholder="Search Order" />
+                                </form>
                             </div>
                             <!--end::Search-->
                         </div>

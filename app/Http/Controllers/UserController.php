@@ -12,13 +12,17 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::where('roles', '!=', 'admin')
-        ->where('id', '!=', Auth::user()->id)
-        ->latest()->get();
+        $query = User::query();
+        if ($request->filled('q')) {
+            $query->where('name', 'LIKE', '%' . $request->q . '%');
+        }
+        $query->where('roles', '!=', 'admin')
+            ->where('id', '!=', Auth::user()->id)
+            ->latest();
         return view('pages.users.index', [
-            'users' =>  $users,
+            'users' =>  $query->get(),
         ]);
     }
 

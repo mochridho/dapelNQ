@@ -4,11 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class DataOfViolation extends Model
 {
     use HasFactory;
+    use SearchableTrait;
+
     protected $guarded = [];
+    protected $with = ['santri','violation','sanction'];
+
+    protected $searchable = [
+        "columns" => [
+            "santris.nama_santri" => 10,
+            "santris.nis" => 10,
+        ],
+        "joins" => [
+            "santris" => ["santris.id", "data_of_violations.santri_id"],
+        ],
+    ];
 
     public function user()
     {

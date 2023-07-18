@@ -10,10 +10,17 @@ class SanctionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Sanction::query();
+        if ($request->filled('q')) {
+            $query->where('keterangan_sanksi', 'LIKE', '%' . $request->q . '%')
+            ->orWhere('kategori_sanksi', 'LIKE', '%' . $request->q . '%');
+        } else {
+            $query->latest();
+        }
         return view('pages.sanctions.index', [
-            'sanctions' => Sanction::latest()->get(),
+            'sanctions' => $query->get(),
         ]);
     }
 
