@@ -8,7 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SanctionController;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\ViolationController;
-
+use App\Http\Controllers\WaliController;
 
 Route::middleware('auth')->group(function () {
     // dashboard
@@ -38,7 +38,4 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
 
-// data pelanggar
-// Route::get('/data-pelanggar', [PelanggarController::class, 'index']);
-// Route::get('/tambah-data-pelanggar', [PelanggarController::class, 'tambahDataPelanggar'])->name('tambah-data-pelanggar');
-// Route::get('/edit-data-pelanggar', [PelanggarController::class, 'editDataPelanggar'])->name('edit-data-pelanggar');
+Route::get('/wali', WaliController::class)->name('wali');

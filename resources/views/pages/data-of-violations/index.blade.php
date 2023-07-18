@@ -63,7 +63,7 @@
                                         <th class="min-w-200px">Keterangan Pelanggaran</th>
                                         <th class="min-w-230px">Sanksi</th>
                                         <th class="min-w-130px">Status</th>
-                                        @if (Auth::user()->role == 'admin' || Auth::user()->role == 'penyidik')
+                                        @if (Auth::user()->roles == 'admin' || Auth::user()->roles == 'penyidik')
                                             <th class="min-w-270px">Aksi</th>
                                         @endif
                                     </tr>
@@ -82,7 +82,7 @@
                                                 <span
                                                     class="badge border {{ $item->status == 'selesai' ? 'border-success bg-success-subtle text-success' : 'border-warning bg-warning-subtle text-warning' }}">{{ $item->status }}</span>
                                             </td>
-                                            @if (Auth::user()->role == 'admin' || Auth::user()->role == 'penyidik')
+                                            @if (Auth::user()->roles == 'admin' || Auth::user()->roles == 'penyidik')
                                                 <td>
                                                     <div class="text-start d-inline-flex gap-1">
                                                         <a href="{{ route('data-of-violations.edit', $item->id) }}"
