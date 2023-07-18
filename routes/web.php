@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
 // data of violations = data pelanggaran
 Route::resource('data-of-violations', DataOfViolationController::class)->middleware('auth');
 
+// prefix master data
 Route::prefix('master')->middleware(['auth', 'auth.administrator'])->name('master.')->group(function () {
     // sanksi = sanctions
     Route::resource('sanctions', SanctionController::class);
@@ -38,4 +39,6 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
 
+
+// wali
 Route::get('/wali', WaliController::class)->name('wali');
