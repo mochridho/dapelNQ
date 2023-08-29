@@ -8,7 +8,7 @@
         <div class="aside-user d-flex align-items-sm-center justify-content-center py-5">
             <!--begin::Symbol-->
             <div class="symbol symbol-50px">
-                <img src="{{ asset('assets') }}/media/avatars/150-26.jpg" alt="" />
+                <img src="{{ auth()->user()->image !== null ? asset('storage/' . auth()->user()->image) : 'https://ui-avatars.com/api/?name=' . auth()->user()->name . '&color=7F9CF5&background=EBF4FF' }}" alt="" />
             </div>
             <!--end::Symbol-->
             <!--begin::Wrapper-->
@@ -95,6 +95,7 @@
                         <span class="menu-title">Data Pelanggar</span>
                     </a>
                 </div>
+
                 {{-- {{ Request::url() == url('/pelanggaran') || Request::url() == url('/user') || Request::url() == url('/santri') || Request::url() == url('') ? 'show' : '' }} --}}
                 <div data-kt-menu-trigger="click"
                     class="menu-item menu-accordion
@@ -156,6 +157,7 @@
                                     <span class="menu-title">Santri</span>
                                 </a>
                             </div>
+
                         @else
                             <div class="menu-item">
                                 <a class="menu-link  {{ Route::is('master.santri.*') ? 'active' : '' }}"

@@ -19,6 +19,9 @@
                             <option value="ringan" {{ $violation->kategori_pelanggaran == 'ringan' ? 'selected' : '' }}>
                                 ringan
                             </option>
+                            <option value="sedang" {{ $violation->kategori_pelanggaran == 'sedang' ? 'selected' : '' }}>
+                                berat
+                            </option>
                             <option value="berat" {{ $violation->kategori_pelanggaran == 'berat' ? 'selected' : '' }}>berat
                             </option>
                         </select>

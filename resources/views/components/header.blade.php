@@ -62,7 +62,8 @@
         <!--end::Aside toggle-->
     </div>
 
-    <div class="toolbar d-flex justify-content-end me-6">
+    <div class="toolbar d-flex justify-content-between align-items-center mx-6">
+        <h1 class="m-0">Data Pelanggaran Santri NQ</h1>
         <div class="nav-item dropdown">
             <a href="#"
                 class="list-unstyled btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary dropdown-toggle"
@@ -82,11 +83,11 @@
                 <!--end::Svg Icon-->
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                {{-- <li><a class="dropdown-item" href="#">Profile</a></li>
                 <li><a class="dropdown-item" href="#">Setting</a></li>
                 <li>
                     <hr class="dropdown-divider">
-                </li>
+                </li> --}}
                 <li>
                     <form action="{{ route('logout') }}" method="post" id="deleteForm">
                         @csrf

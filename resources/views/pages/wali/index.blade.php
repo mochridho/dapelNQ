@@ -19,7 +19,7 @@
             </div>
             {{-- end:header  --}}
             {{-- begin:search  --}}
-            <div class="content bg-light rounded-top-5 pt-4 px-3" style="height: calc(100vh - 150px)">
+            <div class="content bg-light rounded-top-5 pt-4 px-3 overflow-y-hidden" style="height: calc(100vh - 150px)">
                 <h6 class="text-center mb-3">Cari Data Santri</h6>
                 <form action="" method="get" class="d-flex gap-2">
                     <input type="text" class="form-control" name="q" value="{{ request()->q }}" id=""
@@ -28,7 +28,7 @@
                 </form>
 
                 {{-- begin:hasil --}}
-                <div class="content mt-4">
+                <div class="content mt-4 overflow-y-auto overflow-x-hidden" style="height: calc(100vh - 250px)">
                     @forelse ($data as $item)
                         <div class="mb-4">
                             <div class="row">

@@ -41,7 +41,7 @@
                                 <form action="" method="get">
                                     <input type="text" name="q" value="{{ request()->q }}" id="kt_filter_search"
                                         class="form-control form-control-solid form-select-sm w-150px ps-9"
-                                        placeholder="Search Order" />
+                                        placeholder="Cari" />
                                 </form>
                             </div>
                             <!--end::Search-->
@@ -64,6 +64,7 @@
                                         <th class="min-w-150px">Nama Santri</th>
                                         <th class="min-w-200px">Keterangan Pelanggaran</th>
                                         <th class="min-w-230px">Sanksi</th>
+                                        <th class="min-w-230px">Tanggal</th>
                                         <th class="min-w-130px">Status</th>
                                         @if (Auth::user()->roles == 'admin' || Auth::user()->roles == 'penyidik')
                                             <th class="min-w-270px">Aksi</th>
@@ -80,6 +81,7 @@
                                             <td class="text-capitalize">{{ $item->santri->nama_santri }}</td>
                                             <td class="text-capitalize">{{ $item->violation->keterangan_pelanggaran }}</td>
                                             <td class="text-capitalize">{{ $item->sanction->keterangan_sanksi }}</td>
+                                            <td class="text-capitalize"> {{ $item->created_at->format('d/m/y') }}</td>
                                             <td>
                                                 <span
                                                     class="badge border {{ $item->status == 'selesai' ? 'border-success bg-success-subtle text-success' : 'border-warning bg-warning-subtle text-warning' }}">{{ $item->status }}</span>

@@ -18,8 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-// data of violations = data pelanggaran
-Route::resource('data-of-violations', DataOfViolationController::class)->middleware('auth');
+    // data of violations = data pelanggaran
+    Route::resource('data-of-violations', DataOfViolationController::class)->middleware('auth');
 
 Route::prefix('master')->middleware(['auth', 'auth.administrator'])->name('master.')->group(function () {
     // sanksi = sanctions
@@ -30,6 +30,7 @@ Route::prefix('master')->middleware(['auth', 'auth.administrator'])->name('maste
     Route::resource('santri', SantriController::class)->withoutMiddleware('auth.administrator');
     // users = user
     Route::resource('users', UserController::class);
+
 });
 
 // login
@@ -38,4 +39,5 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
 
+// wali santri
 Route::get('/wali', WaliController::class)->name('wali');

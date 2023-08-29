@@ -41,7 +41,7 @@ class SantriController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'nis' => 'required|integer|digits:6|unique:santris,nis',
+            'nis' => 'required|digits:9|unique:santris,nis',
             'nama_santri' => 'required',
             'nama_wali' => 'nullable',
             'jk' => 'required|in:L,P',
@@ -83,7 +83,7 @@ class SantriController extends Controller
     public function update(Request $request, Santri $santri)
     {
          $data = $request->validate([
-            'nis' => 'required|integer|digits:6|unique:santris,nis,' . $santri->id,
+            'nis' => 'required|digits:9|unique:santris,nis,' . $santri->id,
             'nama_santri' => 'required',
             'nama_wali' => 'nullable',
             'jk' => 'required|in:L,P',

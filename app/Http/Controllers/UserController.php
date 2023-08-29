@@ -21,6 +21,7 @@ class UserController extends Controller
         $query->where('roles', '!=', 'admin')
             ->where('id', '!=', Auth::user()->id)
             ->latest();
+        // $query->latest();
         return view('pages.users.index', [
             'users' =>  $query->get(),
         ]);
@@ -48,8 +49,15 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
             'roles' => 'required|in:penyidik,sekretaris',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg',
         ]);
         $data['password'] = Hash::make($request->password);
+        if($request->hasFile('image')){
+            $data["image"] = $request
+            ->file("image")
+            ->store("assets/users", "public");
+        }
+        // dd($data);
         // return $data;
         User::create($data);
         return redirect()->route('master.users.index')->with('success', 'Data User berhasil ditambahkan');
@@ -87,11 +95,20 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email,'. $user->id,
             'password' => 'nullable|min:8',
             'roles' => 'required|in:penyidik,sekretaris',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg',
         ]);
         if ($request->password) {
             $data['password'] = Hash::make($request->password);
         } else {
             $data['password'] = $user->password;
+        }
+
+        if($request->hasFile('image')){
+            $data["image"] = $request
+            ->file("image")
+            ->store("assets/users", "public");
+        } else{
+            $data['image'] = $user->image;
         }
         // return $data;
         $user->update($data);

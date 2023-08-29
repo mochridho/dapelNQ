@@ -41,7 +41,7 @@
                                 <form action="" method="get">
                                     <input type="text" name="q" value="{{ request('q') }}" id="kt_filter_search"
                                         class="form-control form-control-solid form-select-sm w-150px ps-9"
-                                        placeholder="Search Order" />
+                                        placeholder="Cari" />
                                 </form>
                             </div>
                             <!--end::Search-->
@@ -87,7 +87,7 @@
                                             <td>{{ $item->alamat }}</td>
                                             <td>{{ $item->pendidikan }}</td>
                                             <td>{{ $item->nama_wali }}</td>
-                                            <td>{{ $item->kamar }}</td>
+                                            <td class="text-capitalize">{{ $item->kamar }}</td>
                                             <td>{{ $item->no_hp }}</td>
                                             @if (auth()->user()->roles == 'admin' || auth()->user()->roles == 'sekretaris')
                                                 <td>
