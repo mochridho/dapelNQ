@@ -17,8 +17,13 @@
                         <div class="card-toolbar my-1">
                             <!--begin::Select-->
                             <div class="me-6 my-1">
+<<<<<<< HEAD:resources/views/pages/violations/index.blade.php
                                 <a href="{{ route('master.violations.create') }}">
                                     <button class="btn btn-success btn-sm">Tambah Data</button>
+=======
+                                <a href="{{ route('tambah-data-pelanggaran') }}">
+                                    <button class="btn btn-success btn-sm">Tambah Data Pelanggaran</button>
+>>>>>>> c9935c18b87198c3575143dc0fcd7174ea79165e:resources/views/pages/dataPelanggaran/Pelanggaran.blade.php
                                 </a>
                             </div>
                             <!--end::Select-->
@@ -58,7 +63,11 @@
                                 <thead class="fs-7 text-gray-400 text-uppercase">
                                     <tr>
                                         <th class="min-w-50px">No</th>
+<<<<<<< HEAD:resources/views/pages/violations/index.blade.php
                                         <th class="min-w-60px">Kategori Pelanggaran</th>
+=======
+                                        <th class="min-w-60px">Skala Pelanggaran</th>
+>>>>>>> c9935c18b87198c3575143dc0fcd7174ea79165e:resources/views/pages/dataPelanggaran/Pelanggaran.blade.php
                                         <th class="min-w-250px">Keterangan Pelanggaran</th>
                                         <th class="min-w-30px">Aksi</th>
                                     </tr>
@@ -66,6 +75,7 @@
                                 <!--end::Head-->
                                 <!--begin::Body-->
                                 <tbody class="fs-6">
+<<<<<<< HEAD:resources/views/pages/violations/index.blade.php
                                     @forelse ($violations as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
@@ -90,6 +100,53 @@
                                             <td colspan="4" class="text-center">Data Kosong</td>
                                         </tr>
                                     @endforelse
+=======
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ringan</td>
+                                        <td>Ghoshop</td>
+                                        <td class="text-start">
+                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Berat</td>
+                                        <td>Mengkonsumsi Bahan Terlarang</td>
+                                        <td class="text-start">
+                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Ringan</td>
+                                        <td>Telat Balek Pesantren</td>
+                                        <td class="text-start">
+                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Ringan</td>
+                                        <td>Tidak Mengikuti Kegiatan Ubudiah</td>
+                                        <td class="text-start">
+                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Sedang</td>
+                                        <td>Berkelahi</td>
+                                        <td class="text-start">
+                                            <a href="{{ route('edit-data-pelanggaran') }}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+>>>>>>> c9935c18b87198c3575143dc0fcd7174ea79165e:resources/views/pages/dataPelanggaran/Pelanggaran.blade.php
                                 </tbody>
                                 <!--end::Body-->
                             </table>

@@ -57,15 +57,30 @@
                                 <!--begin::Head-->
                                 <thead class="fs-7 text-gray-400 text-uppercase">
                                     <tr>
+<<<<<<< HEAD:resources/views/pages/sanctions/index.blade.php
                                         <th class="min-w-50px">No</th>
                                         <th class="min-w-60px">Kategori Sanksi</th>
                                         <th class="min-w-250px">Keterangan Sanksi</th>
                                         <th class="min-w-30px">Aksi</th>
+=======
+                                        <th class="min-w-30px">No</th>
+                                        <th class="min-w-90px">NIS</th>
+                                        <th class="min-w-200px">Nama Santri</th>
+                                        <th class="min-w-150px">Tanggal Lahir</th>
+                                        <th class="min-w-150px">Jenis Kelamin</th>
+                                        <th class="min-w-200px">alamat</th>
+                                        <th class="min-w-100px">Pendidikan</th>
+                                        <th class="min-w-170px">Nama Wali</th>
+                                        <th class="min-w-100px">Kamar</th>
+                                        <th class="min-w-150px">No HP</th>
+                                        <th class="min-w-100px">Aksi</th>
+>>>>>>> c9935c18b87198c3575143dc0fcd7174ea79165e:resources/views/pages/dataSantri/Santri.blade.php
                                     </tr>
                                 </thead>
                                 <!--end::Head-->
                                 <!--begin::Body-->
                                 <tbody class="fs-6">
+<<<<<<< HEAD:resources/views/pages/sanctions/index.blade.php
                                     @foreach ($sanctions as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
@@ -74,6 +89,98 @@
                                             <td class="text-start">
                                                 <div class="d-inline-flex align-items-center gap-1">
                                                     <a href="{{ route('master.sanctions.edit', $item) }}"
+=======
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2020</td>
+                                            <td>Abdul Mannan</td>
+                                            <td>14072001</td>
+                                            <td>Laki-laki</td>
+                                            <td>Besuki-Situbondo</td>
+                                            <td>MTs</td>
+                                            <td>Mandalaaa</td>
+                                            <td>Al Mulku</td>
+                                            <td>123456789</td>
+                                            <td>
+                                                <div class="text-start d-inline-flex gap-1">
+                                                    <a href="{{ route('edit-data-santri') }}"
+                                                        class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2022</td>
+                                            <td>Abdul Malik</td>
+                                            <td>14072002</td>
+                                            <td>Laki-laki</td>
+                                            <td>Mlandingan-Situbondo</td>
+                                            <td>MI</td>
+                                            <td>Sanusi</td>
+                                            <td>An Nur</td>
+                                            <td>123456789</td>
+                                            <td>
+                                                <div class="text-start d-inline-flex gap-1">
+                                                    <a href="{{ route('edit-data-santri') }}"
+                                                        class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>2023</td>
+                                            <td>Abdus Salam</td>
+                                            <td>14072003</td>
+                                            <td>Laki-laki</td>
+                                            <td>Bungatan-Situbondo</td>
+                                            <td>MA</td>
+                                            <td>Samsuddin</td>
+                                            <td>At Taubah</td>
+                                            <td>123456789</td>
+                                            <td>
+                                                <div class="text-start d-inline-flex gap-1">
+                                                    <a href="{{ route('edit-data-santri') }}"
+                                                        class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>2024</td>
+                                            <td>Mannan</td>
+                                            <td>14072001</td>
+                                            <td>Laki-laki</td>
+                                            <td>Besuk-Probolinggo</td>
+                                            <td>MTs</td>
+                                            <td>Anjas</td>
+                                            <td>Muhammad</td>
+                                            <td>123456789</td>
+                                            <td>
+                                                <div class="text-start d-inline-flex gap-1">
+                                                    <a href="{{ route('edit-data-santri') }}"
+                                                        class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>2025</td>
+                                            <td>Malik</td>
+                                            <td>14072001</td>
+                                            <td>Laki-laki</td>
+                                            <td>Kraksaan-Situbondo</td>
+                                            <td>MTs</td>
+                                            <td>AHMAD</td>
+                                            <td>Al Kahfi</td>
+                                            <td>123456789</td>
+                                            <td>
+                                                <div class="text-start d-inline-flex gap-1">
+                                                    <a href="{{ route('edit-data-santri') }}"
+>>>>>>> c9935c18b87198c3575143dc0fcd7174ea79165e:resources/views/pages/dataSantri/Santri.blade.php
                                                         class="btn btn-success btn-sm">Edit</a>
                                                     <form onsubmit="return confirm('apakah anda yakin?')"
                                                         action="{{ route('master.sanctions.destroy', $item) }}"
@@ -85,7 +192,10 @@
                                                 </div>
                                             </td>
                                         </tr>
+<<<<<<< HEAD:resources/views/pages/sanctions/index.blade.php
                                     @endforeach
+=======
+>>>>>>> c9935c18b87198c3575143dc0fcd7174ea79165e:resources/views/pages/dataSantri/Santri.blade.php
                                 </tbody>
                                 <!--end::Body-->
                             </table>

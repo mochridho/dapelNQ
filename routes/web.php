@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataOfViolationController;
 use App\Http\Controllers\UserController;
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
     // data of violations = data pelanggaran
     Route::resource('data-of-violations', DataOfViolationController::class)->middleware('auth');
 
+// prefix master data
 Route::prefix('master')->middleware(['auth', 'auth.administrator'])->name('master.')->group(function () {
     // sanksi = sanctions
     Route::resource('sanctions', SanctionController::class);
@@ -39,5 +41,4 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'authenticate']);
 });
 
-// wali santri
 Route::get('/wali', WaliController::class)->name('wali');
