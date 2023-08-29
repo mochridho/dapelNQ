@@ -78,8 +78,8 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">{{ $dataPelanggaran }} pelanggaran</div>
-                        <div class="fw-bold text-gray-100">Jumlah Data Pelanggaran</div>
+                        <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">{{ $dataPelanggaran }} pelanggar</div>
+                        <div class="fw-bold text-gray-100">Jumlah Data Pelanggar</div>
                     </div>
                     <!--end::Body-->
                 </a>

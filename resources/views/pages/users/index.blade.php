@@ -41,7 +41,7 @@
                                 <form action="" method="get">
                                     <input type="text" name="q" value="{{ request()->q }}" id="kt_filter_search"
                                         class="form-control form-control-solid form-select-sm w-150px ps-9"
-                                        placeholder="Search Order" />
+                                        placeholder="Cari" />
                                 </form>
                             </div>
                             <!--end::Search-->

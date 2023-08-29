@@ -13,7 +13,7 @@ class WaliController extends Controller
     public function __invoke(Request $request)
     {
         $query = $request->get('q');
-        if (!empty($query) && strlen($query) === 6) {
+        if (!empty($query) && strlen($query) === 9) {
             $data = DataOfViolation::with(['santri', 'violation', 'sanction', 'user'])
             ->whereStatus('selesai')
             ->whereHas('santri', function ($query) use ($request) {

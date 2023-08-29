@@ -72,15 +72,14 @@
                         <div class="col-lg-6">
                             <!--begin::Input group-->
                             <div class="d-flex flex-column mb-7 fv-row">
-                                <label class="required fs-6 fw-bold mb-2">Kamar</label>
-                                <select class="form-select form-select-solid @error('kamar') is-invalid @enderror"
-                                    data-control="select2" data-hide-search="true" data-placeholder="Pilih Kamar"
-                                    name="kamar">
-                                    <option value="">Select Kamar...</option>
-                                    @foreach (listKamar() as $item)
-                                        <option value="{{ $item }}">{{ $item }}</option>
-                                    @endforeach
-                                </select>
+                                <!--begin::Label-->
+                                <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                    <span class="required">Kamar</span>
+                                </label>
+                                <!--end::Label-->
+                                <input type="text"
+                                    class="form-control form-control-solid @error('kamar') is-invalid @enderror"
+                                    placeholder="Nama Kamar" name="kamar" />
                                 @error('kamar')
                                     <div class="invalid-feedback">
                                         {{ $message }}

@@ -19,6 +19,9 @@
                             <option value="ringan" {{ $violation->kategori_pelanggaran == 'ringan' ? 'selected' : '' }}>
                                 ringan
                             </option>
+                            <option value="sedang" {{ $violation->kategori_pelanggaran == 'sedang' ? 'selected' : '' }}>
+                                berat
+                            </option>
                             <option value="berat" {{ $violation->kategori_pelanggaran == 'berat' ? 'selected' : '' }}>berat
                             </option>
                         </select>
@@ -37,7 +40,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end gap-2">
-                        <button class="btn btn-danger">Batal</button>
+                        <a href="{{ route('master.violations.index') }}" class="btn btn-danger">Batal</a>
                         <button type="submit" class="btn btn-success">Update</button>
                     </div>
                 </div>

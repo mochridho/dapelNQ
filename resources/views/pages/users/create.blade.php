@@ -3,7 +3,7 @@
     <div id="kt_content_container" class="container-xxl">
         <h1>Tambah Data user</h1>
         <div class="card mt-lg-6">
-            <form action="{{ route('master.users.store') }}" method="post">
+            <form action="{{ route('master.users.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="row mt-5">
@@ -65,6 +65,17 @@
                                 class="form-control form-control-solid @error('password') is-invalid @enderror"
                                 placeholder="Masukkan Pasword" name="password" />
                             @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="d-flex flex-column mb-7 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                <span class="required">Foto</span>
+                            </label>
+                            <!--end::Label-->
+                            <input class="form-control" type="file" name="image">
+                            @error('foto')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>

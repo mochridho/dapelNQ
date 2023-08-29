@@ -6,7 +6,7 @@
             {{ $item }}
         @endforeach
         <div class="card mt-lg-6">
-            <form action="{{ route('master.users.update', $user) }}" method="post">
+            <form action="{{ route('master.users.update', $user) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
@@ -60,9 +60,23 @@
                             <input type="password" class="form-control form-control-solid" placeholder="Masukkan Pasword"
                                 name="password" />
                         </div>
+                        <div class="d-flex flex-column mb-7 fv-row">
+                            <div class="symbol symbol-100px mb-3">
+                                <img src="{{ $user->image !== null ? asset('storage/' . $user->image) : 'https://ui-avatars.com/api/?name=' . $user->name . '&color=7F9CF5&background=EBF4FF' }}" alt="" />
+                            </div>
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                                <span class="required">Foto</span>
+                            </label>
+                            <!--end::Label-->
+                            <input class="form-control" type="file" name="image">
+                            @error('foto')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
                     <div class="mt-5 d-flex justify-content-end w-100 gap-2">
-                        <button class="btn btn-danger">Batal</button>
+                        <a href="{{ route('master.users.index') }}" class="btn btn-danger">Batal</a>
                         <button type="submit" class="btn btn-success">Update</button>
                     </div>
                 </div>

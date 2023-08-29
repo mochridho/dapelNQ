@@ -16,6 +16,7 @@
                             data-placeholder="Select kategori pelanggaran..." name="kategori_pelanggaran">
                             <option value="">Select kategori pelanggaran...</option>
                             <option value="ringan">ringan</option>
+                            <option value="sedang">sedang</option>
                             <option value="berat">berat</option>
                         </select>
                     </div>
