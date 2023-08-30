@@ -156,6 +156,15 @@
                                     <span class="menu-title">Santri</span>
                                 </a>
                             </div>
+                            <div class="menu-item">
+                                <a class="menu-link  {{ Request::url() == url('/master/form-report') ? 'active' : '' }}"
+                                    href="{{ route('master.form-report') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Data Laporan</span>
+                                </a>
+                            </div>
                         @else
                             <div class="menu-item">
                                 <a class="menu-link  {{ Route::is('master.santri.*') ? 'active' : '' }}"

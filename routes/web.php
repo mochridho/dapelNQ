@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataOfViolationController;
+use App\Http\Controllers\FormReportController;
+use App\Http\Controllers\PelanggaranReportController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SanctionController;
 use App\Http\Controllers\SantriController;
@@ -30,6 +32,10 @@ Route::prefix('master')->middleware(['auth', 'auth.administrator'])->name('maste
     Route::resource('santri', SantriController::class)->withoutMiddleware('auth.administrator');
     // users = user
     Route::resource('users', UserController::class);
+    // form report
+    Route::get('/form-report', FormReportController::class)->name('form-report');
+    // report
+    Route::get('/pelanggaran-report', PelanggaranReportController::class)->name('pelanggaran-report');
 });
 
 // login

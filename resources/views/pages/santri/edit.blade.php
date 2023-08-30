@@ -60,15 +60,9 @@
                             <!--begin::Input group-->
                             <div class="d-flex flex-column mb-7 fv-row">
                                 <label class="required fs-6 fw-bold mb-2">Kamar</label>
-                                <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
-                                    data-placeholder="Pilih Kamar" name="kamar">
-                                    <option value="">Select Kamar...</option>
-                                    @foreach (listKamar() as $item)
-                                        <option value="{{ $item }}" {{ $item == $santri->kamar ? 'selected' : '' }}>
-                                            {{ $item }}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="text"
+                                    class="form-control form-control-solid @error('kamar') is-invalid @enderror"
+                                    placeholder="Nama Santri" name="kamar" value="{{ $santri->kamar }}" />
                             </div>
                             <!--end::Input group-->
                         </div>
